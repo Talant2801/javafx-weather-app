@@ -1,0 +1,71 @@
+{
+    "latitude": 52.52,
+    "longitude": 13.419998,
+    "generationtime_ms": 0.2974271774291992,
+    "utc_offset_seconds": 7200,
+    "timezone": "Europe/Berlin",
+    "timezone_abbreviation": "GMT+2",
+    "elevation": 46.0,
+    "current_units": {
+        "time": "iso8601",
+        "interval": "seconds",
+        "temperature_2m": "\u00b0C",
+        "apparent_temperature": "\u00b0C",
+        "relative_humidity_2m": "%",
+        "wind_speed_10m": "km/h",
+        "weather_code": "wmo code"
+    },
+    "current": {
+        "time": "2026-08-13T01:15",
+        "interval": 900,
+        "temperature_2m": 18.2,
+        "apparent_temperature": 16.9,
+        "relative_humidity_2m": 54,
+        "wind_speed_10m": 6.7,
+        "weather_code": 0
+    },
+    "daily_units": {
+        "time": "iso8601",
+        "weather_code": "wmo code",
+        "temperature_2m_max": "\u00b0C",
+        "temperature_2m_min": "\u00b0C"
+    },
+    "daily": {
+        "time": [
+            "2026-08-13",
+            "2026-08-14",
+            "2026-08-15",
+            "2026-08-16",
+            "2026-08-17",
+            "2026-08-18",
+            "2026-08-19"
+        ],
+        "weather_code": [
+            0,
+            3,
+            3,
+            61,
+            3,
+            61,
+            95
+        ],
+        "temperature_2m_max": [
+            27.4,
+            31.0,
+            33.0,
+            22.2,
+            20.9,
+            22.5,
+            22.0
+        ],
+        "temperature_2m_min": [
+            15.4,
+            16.3,
+            17.5,
+            16.1,
+            14.5,
+            16.1,
+            15.9
+        ]
+    }
+}
