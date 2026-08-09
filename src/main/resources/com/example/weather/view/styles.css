@@ -1,0 +1,204 @@
+/*
+ * Dark theme.
+ *
+ * Colours are declared once as looked-up variables on .root-pane and referenced everywhere else,
+ * so re-theming means editing this block rather than hunting hex codes through the file.
+ */
+
+.root-pane {
+    -fx-bg-deep:      #0f1420;
+    -fx-bg-raised:    #1a2233;
+    -fx-bg-inset:     #232d42;
+    -fx-accent-blue:  #4f9dff;
+    -fx-accent-glow:  #7cc4ff;
+    -fx-text-primary: #eaf1ff;
+    -fx-text-muted:   #8d9bb5;
+    -fx-danger:       #ff7a85;
+
+    -fx-background-color: -fx-bg-deep;
+    -fx-font-family: "Inter", "Segoe UI", "Ubuntu", "Helvetica Neue", sans-serif;
+}
+
+/* ---------- search row ---------- */
+
+.search-field {
+    -fx-background-color: -fx-bg-raised;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: transparent;
+    -fx-border-width: 1.5;
+    -fx-text-fill: -fx-text-primary;
+    -fx-prompt-text-fill: -fx-text-muted;
+    -fx-font-size: 14px;
+    -fx-padding: 11 14 11 14;
+}
+
+.search-field:focused {
+    -fx-border-color: -fx-accent-blue;
+}
+
+.primary-button {
+    -fx-background-color: -fx-accent-blue;
+    -fx-background-radius: 10;
+    -fx-text-fill: #08111f;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 11 22 11 22;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: -fx-accent-glow;
+}
+
+.primary-button:disabled {
+    -fx-opacity: 0.45;
+}
+
+.unit-toggle {
+    -fx-background-color: -fx-bg-inset;
+    -fx-background-radius: 10;
+    -fx-text-fill: -fx-text-primary;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-min-width: 52;
+    -fx-padding: 11 0 11 0;
+    -fx-cursor: hand;
+}
+
+.unit-toggle:selected {
+    -fx-background-color: -fx-accent-blue;
+    -fx-text-fill: #08111f;
+}
+
+/* ---------- history chips ---------- */
+
+.history-chip {
+    -fx-background-color: transparent;
+    -fx-border-color: -fx-bg-inset;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 999;
+    -fx-background-radius: 999;
+    -fx-text-fill: -fx-text-muted;
+    -fx-font-size: 12px;
+    -fx-padding: 5 14 5 14;
+    -fx-cursor: hand;
+}
+
+.history-chip:hover {
+    -fx-border-color: -fx-accent-blue;
+    -fx-text-fill: -fx-text-primary;
+}
+
+/* ---------- status ---------- */
+
+.loading-indicator {
+    -fx-progress-color: -fx-accent-blue;
+}
+
+.error-label {
+    -fx-text-fill: -fx-danger;
+    -fx-font-size: 13px;
+}
+
+.placeholder {
+    -fx-text-fill: -fx-text-muted;
+    -fx-font-size: 15px;
+    -fx-padding: 40 0 0 0;
+}
+
+/* ---------- current conditions ---------- */
+
+.current-card {
+    -fx-background-color: -fx-bg-raised;
+    -fx-background-radius: 16;
+    -fx-padding: 22 26 26 26;
+}
+
+.city-name {
+    -fx-text-fill: -fx-text-primary;
+    -fx-font-size: 21px;
+    -fx-font-weight: bold;
+}
+
+.observed-at {
+    -fx-text-fill: -fx-text-muted;
+    -fx-font-size: 12px;
+}
+
+.current-row {
+    -fx-padding: 14 0 0 0;
+}
+
+.condition-icon {
+    -fx-font-size: 62px;
+}
+
+.temperature {
+    -fx-text-fill: -fx-text-primary;
+    -fx-font-size: 54px;
+    -fx-font-weight: bold;
+}
+
+.condition-text {
+    -fx-text-fill: -fx-accent-glow;
+    -fx-font-size: 15px;
+}
+
+.metric-name {
+    -fx-text-fill: -fx-text-muted;
+    -fx-font-size: 13px;
+    -fx-min-width: 74;
+}
+
+.metric-value {
+    -fx-text-fill: -fx-text-primary;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+/* ---------- forecast strip ---------- */
+
+.section-title {
+    -fx-text-fill: -fx-text-muted;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.forecast-card {
+    -fx-background-color: -fx-bg-raised;
+    -fx-background-radius: 14;
+    -fx-padding: 16 10 16 10;
+    -fx-spacing: 6;
+}
+
+.forecast-card:hover {
+    -fx-background-color: -fx-bg-inset;
+}
+
+.forecast-day {
+    -fx-text-fill: -fx-text-primary;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.forecast-date {
+    -fx-text-fill: -fx-text-muted;
+    -fx-font-size: 11px;
+}
+
+.forecast-icon {
+    -fx-font-size: 28px;
+    -fx-padding: 6 0 6 0;
+}
+
+.forecast-high {
+    -fx-text-fill: -fx-text-primary;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.forecast-low {
+    -fx-text-fill: -fx-text-muted;
+    -fx-font-size: 13px;
+}

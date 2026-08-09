@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<!--
+  The view declares structure and style classes only. Every fx:id below is filled in by
+  WeatherController, and every onAction points at a handler there - no logic lives in this file.
+-->
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.weather.controller.WeatherController"
+      styleClass="root-pane"
+      spacing="18.0"
+      prefWidth="760.0"
+      prefHeight="620.0">
+
+    <padding>
+        <Insets top="24.0" right="28.0" bottom="24.0" left="28.0"/>
+    </padding>
+
+    <!-- Search row -->
+    <HBox styleClass="search-bar" spacing="10.0" alignment="CENTER_LEFT">
+        <TextField fx:id="searchField"
+                   promptText="Search for a city…"
+                   styleClass="search-field"
+                   HBox.hgrow="ALWAYS"/>
+        <Button fx:id="searchButton"
+                text="Search"
+                defaultButton="true"
+                onAction="#onSearch"
+                styleClass="primary-button"/>
+        <ToggleButton fx:id="unitToggle"
+                      text="°C"
+                      onAction="#onToggleUnits"
+                      styleClass="unit-toggle"/>
+    </HBox>
+
+    <!-- Recent searches, hidden until there is something to show -->
+    <HBox fx:id="historyBox" styleClass="history-bar" spacing="8.0" visible="false" managed="false"/>
+
+    <!-- Status row: spinner while loading, message on failure -->
+    <HBox spacing="12.0" alignment="CENTER_LEFT">
+        <ProgressIndicator fx:id="loadingIndicator"
+                           styleClass="loading-indicator"
+                           prefWidth="26.0" prefHeight="26.0"
+                           visible="false" managed="false"/>
+        <Label fx:id="errorLabel" styleClass="error-label" wrapText="true" visible="false" managed="false"/>
+    </HBox>
+
+    <Label fx:id="placeholderLabel"
+           styleClass="placeholder"
+           text="Type a city above to see its weather."/>
+
+    <!-- Results, hidden until the first successful search -->
+    <VBox fx:id="weatherPane" styleClass="weather-pane" spacing="18.0" visible="false" managed="false">
+
+        <VBox styleClass="current-card" spacing="6.0">
+            <Label fx:id="cityLabel" styleClass="city-name" text="—"/>
+            <Label fx:id="observedAtLabel" styleClass="observed-at" text=""/>
+
+            <HBox spacing="20.0" alignment="CENTER_LEFT" styleClass="current-row">
+                <Label fx:id="conditionIcon" styleClass="condition-icon" text=""/>
+                <VBox spacing="2.0">
+                    <Label fx:id="temperatureLabel" styleClass="temperature" text="—"/>
+                    <Label fx:id="conditionLabel" styleClass="condition-text" text=""/>
+                </VBox>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <VBox styleClass="metrics" spacing="8.0">
+                    <HBox styleClass="metric" spacing="8.0">
+                        <Label styleClass="metric-name" text="Feels like"/>
+                        <Label fx:id="feelsLikeLabel" styleClass="metric-value" text="—"/>
+                    </HBox>
+                    <HBox styleClass="metric" spacing="8.0">
+                        <Label styleClass="metric-name" text="Humidity"/>
+                        <Label fx:id="humidityLabel" styleClass="metric-value" text="—"/>
+                    </HBox>
+                    <HBox styleClass="metric" spacing="8.0">
+                        <Label styleClass="metric-name" text="Wind"/>
+                        <Label fx:id="windLabel" styleClass="metric-value" text="—"/>
+                    </HBox>
+                </VBox>
+            </HBox>
+        </VBox>
+
+        <Label styleClass="section-title" text="NEXT DAYS"/>
+        <HBox fx:id="forecastBox" styleClass="forecast-strip" spacing="12.0"/>
+    </VBox>
+
+</VBox>
