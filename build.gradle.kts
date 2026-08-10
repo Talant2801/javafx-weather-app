@@ -29,6 +29,19 @@ application {
     mainClass = "com.example.weather.Main"
 }
 
+// Gradle runs the app in a separate JVM, which does not inherit -D flags from the Gradle
+// invocation. Forward the application's own config keys so `./gradlew run -Dcache.ttl.minutes=1`
+// behaves the way `java -Dcache.ttl.minutes=1 -jar ...` does.
+val configPrefixes = listOf("openmeteo.", "http.", "cache.", "forecast.", "history.")
+tasks.named<JavaExec>("run") {
+    System.getProperties().forEach { key, value ->
+        val name = key.toString()
+        if (configPrefixes.any { name.startsWith(it) }) {
+            systemProperty(name, value.toString())
+        }
+    }
+}
+
 dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind:2.22.1")
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.22.1")

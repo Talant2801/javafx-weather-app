@@ -62,9 +62,4 @@ public enum Units {
     public String windSpeedSymbol() {
         return windSpeedSymbol;
     }
-
-    /** The other unit system; used by the UI toggle. */
-    public Units toggled() {
-        return this == METRIC ? IMPERIAL : METRIC;
-    }
 }

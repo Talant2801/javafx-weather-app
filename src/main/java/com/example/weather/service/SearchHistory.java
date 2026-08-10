@@ -3,7 +3,6 @@ package com.example.weather.service;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.List;
-import java.util.Locale;
 import java.util.Objects;
 
 /**
@@ -54,10 +53,5 @@ public class SearchHistory {
 
     public void clear() {
         entries.clear();
-    }
-
-    /** Normalised form used for display consistency in tests and logs. */
-    static String normalise(String cityName) {
-        return cityName.trim().toLowerCase(Locale.ROOT);
     }
 }
